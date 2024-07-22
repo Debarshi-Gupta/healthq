@@ -1,0 +1,40 @@
+<div class="bootstrap-wrapper">
+    <div class="container mt" style="background-color: rgb(62, 58, 59); width: 40%; border-radius: 10px;">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="container text-center">
+                    <img class="img-fluid mt" style="width: 150px;" src="/assets/421648.png" alt="">
+                </div>
+                <br>
+                <h1 class="text-center" style="color: white;"><strong>ADMIN LOGIN</strong></h1>
+
+                <p class="text-center" *ngIf="!loggedIn" style="color: red; margin-top: 5px;">Invalid Username/Password</p>
+
+                <form class="text-center" (ngSubmit)="onSubmit()">
+                    <mat-form-field appearance="outline">
+                        <mat-label style="color: white;">Username</mat-label>
+                        <input [(ngModel)]="credentials.username" required name="username" type="text" matInput placeholder="Enter Your Username" autocomplete="off">
+                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                    </mat-form-field>
+
+                    <br>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label style="color: white;">Password</mat-label>
+                        <input [(ngModel)]="credentials.password" required name="password" type="password" matInput placeholder="Enter Your Password">
+                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                    </mat-form-field>
+
+                    <br>
+
+                    <div class="container">
+                        <button type="submit" mat-raised-button color="primary">LOGIN</button>
+                        <button type="reset" style="margin-left: 10px;" mat-raised-button color="accent">RESET</button>
+                    </div>
+
+                </form>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+mat-expansion-panel
+{
+    border: 1px solid navy;
+}
+
+.table-borderless td, .table-borderless th 
+{
+    border: 0;
+}
+
+td 
+{
+    font-family: sans-serif;
+}
+
+mat-panel-title
+{
+    text-transform: uppercase;
+}
+
+mat-form-field
+{
+    background-color: white;
+    border: none;
+}
+

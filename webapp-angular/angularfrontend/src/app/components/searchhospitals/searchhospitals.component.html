@@ -1,0 +1,109 @@
+<div class="container mt mb">
+
+    <div class="form-group">
+        <mat-form-field appearance="fill">
+            <mat-label class="text-center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>SEARCH HOSPITALS</strong>
+            </mat-label>
+            <input matInput type="text" [(ngModel)]="searchText" autocomplete="off" id="search-text">
+            <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label class="text-center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>SEARCH BY</strong>
+            </mat-label>
+            <mat-select [(ngModel)]="filter">
+                <mat-option value="Hospital Name">Hospital Name</mat-option>
+                <mat-option value="Hospital Location">Hospital Location</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <br><br>
+    <div *ngIf="filter=='Hospital Name'">
+        <div class="row" *ngFor="let list of hospitalInformationList | appFilterName: searchText ; let i = index">
+            <mat-accordion>
+                <mat-expansion-panel [expanded]="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title class="text-center">
+                            <mat-icon style="color: red;">local_hospital</mat-icon>
+                            &nbsp;<strong>{{list.hospital.hospitalName}}</strong>
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click
+                            Here To Toggle Details
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <table class="table table-borderless table-condensed">
+                        <tbody>
+                            <tr>
+                                <td>APPOINTMENTS PER DAY: &nbsp;{{list.hospital.appointmentsPerDay}}</td>
+                                <td>CONTACT NUMBER: &nbsp;{{list.hospital.contactNumber}}</td>
+                                <td>EMAIL ID: &nbsp;{{list.hospital.emailId}}</td>
+                            </tr>
+                            <tr>
+                                <td>STREET LINE 1: &nbsp;{{list.hospitalAddress.streetLine1}}</td>
+                                <td>STREET LINE 2: &nbsp;{{list.hospitalAddress.streetLine2}}</td>
+                                <td>LOCATION: &nbsp;{{list.hospitalAddress.location}}</td>
+                            </tr>
+                            <tr>
+                                <td>PINCODE: &nbsp;{{list.hospitalAddress.pincode}}</td>
+                                <td>STATE: &nbsp;{{list.hospitalAddress.state}}</td>
+                                <td>COUNTRY: &nbsp;{{list.hospitalAddress.country}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <mat-action-row>
+                        <button (click)="getMemberRegistration()" mat-raised-button color="primary">SCHEDULE  &nbsp;APPOINTMENT <mat-icon>camera_enhance</mat-icon></button>
+                    </mat-action-row>
+
+                </mat-expansion-panel>
+
+            </mat-accordion>
+
+        </div>
+    </div>
+    <div *ngIf="filter=='Hospital Location'">
+        <div class="row" *ngFor="let list of hospitalInformationList | appFilterLocation: searchText ; let i = index">
+            <mat-accordion>
+                <mat-expansion-panel [expanded]="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title class="text-center">
+                            <mat-icon style="color: red;">local_hospital</mat-icon>
+                            &nbsp;<strong>{{list.hospital.hospitalName}}</strong>
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click
+                            Here To Toggle Details
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <table class="table table-borderless table-condensed">
+                        <tbody>
+                            <tr>
+                                <td>APPOINTMENTS PER DAY: &nbsp;{{list.hospital.appointmentsPerDay}}</td>
+                                <td>CONTACT NUMBER: &nbsp;{{list.hospital.contactNumber}}</td>
+                                <td>EMAIL ID: &nbsp;{{list.hospital.emailId}}</td>
+                            </tr>
+                            <tr>
+                                <td>STREET LINE 1: &nbsp;{{list.hospitalAddress.streetLine1}}</td>
+                                <td>STREET LINE 2: &nbsp;{{list.hospitalAddress.streetLine2}}</td>
+                                <td>LOCATION: &nbsp;{{list.hospitalAddress.location}}</td>
+                            </tr>
+                            <tr>
+                                <td>PINCODE: &nbsp;{{list.hospitalAddress.pincode}}</td>
+                                <td>STATE: &nbsp;{{list.hospitalAddress.state}}</td>
+                                <td>COUNTRY: &nbsp;{{list.hospitalAddress.country}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <mat-action-row>
+                        <button (click)="getMemberRegistration()" mat-raised-button color="primary">SCHEDULE  &nbsp;APPOINTMENT <mat-icon>camera_enhance</mat-icon></button>
+                    </mat-action-row>
+
+                </mat-expansion-panel>
+
+            </mat-accordion>
+
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>

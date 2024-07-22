@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+
+body 
+{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    /* background: linear-gradient(rgba(255,255,255,.03), rgba(255,255,255,.03)), url("/assets/background.jpg"); */
+    background-size: 100% 100%;
+    background-image: url("/assets/backgroundgif.gif");
+    
+}
+
+.text-center
+{
+    text-align: center;
+}
+
+.mt
+{
+    margin-top: 20px;
+}
+
+.mb
+{
+    margin-bottom: 20px;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

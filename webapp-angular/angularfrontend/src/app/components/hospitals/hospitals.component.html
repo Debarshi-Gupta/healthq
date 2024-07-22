@@ -1,0 +1,48 @@
+<div class="container mt mb">
+    
+    <button (click)="getCreateHospital()" mat-raised-button style="background-color: #28a745; color:white">CREATE <mat-icon>library_add</mat-icon></button>
+    <br><br>
+    <div class="row" *ngFor="let list of hospitalInformationList; let i = index">
+        <mat-accordion>
+            <mat-expansion-panel [expanded]="true">
+                <mat-expansion-panel-header>
+                    <mat-panel-title class="text-center">
+                        <mat-icon style="color: red;">local_hospital</mat-icon> &nbsp;<strong>{{list.hospital.hospitalName}}</strong>
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click Here To Toggle Details
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <table class="table table-borderless table-condensed">
+                    <tbody>
+                    <tr>
+                        <td>APPOINTMENTS PER DAY: &nbsp;{{list.hospital.appointmentsPerDay}}</td>
+                        <td>CONTACT NUMBER: &nbsp;{{list.hospital.contactNumber}}</td>
+                        <td>EMAIL ID: &nbsp;{{list.hospital.emailId}}</td>
+                    </tr>
+                    <tr>
+                        <td>STREET LINE 1: &nbsp;{{list.hospitalAddress.streetLine1}}</td>
+                        <td>STREET LINE 2: &nbsp;{{list.hospitalAddress.streetLine2}}</td>
+                        <td>LOCATION: &nbsp;{{list.hospitalAddress.location}}</td>
+                    </tr>
+                    <tr>
+                        <td>PINCODE: &nbsp;{{list.hospitalAddress.pincode}}</td>
+                        <td>STATE: &nbsp;{{list.hospitalAddress.state}}</td>
+                        <td>COUNTRY: &nbsp;{{list.hospitalAddress.country}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <mat-action-row>
+                    <button (click)="getUpdatehospital(list)" mat-raised-button color="primary">UPDATE <mat-icon>update</mat-icon></button>
+                    <button (click)="deleteHospital(list)" mat-raised-button color="accent">DELETE <mat-icon>delete</mat-icon></button>
+                </mat-action-row>
+
+            </mat-expansion-panel>
+
+        </mat-accordion>
+
+    </div>
+</div>
+<br>
+<br>
+<br>

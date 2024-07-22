@@ -1,0 +1,16 @@
+::ng-deep .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick
+{
+    color: red!important;
+    opacity: 0.8!important;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline 
+{
+    color: rgb(1, 1, 55)!important;
+    opacity: 0.5!important;
+}
+
+input 
+{
+    color: white;
+}

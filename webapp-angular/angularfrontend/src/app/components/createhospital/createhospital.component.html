@@ -1,0 +1,119 @@
+<div class="bootstrap-wrapper">
+    <div class="container mt" style="background-color: white;">
+        <div class="row">
+            <div>
+                <br>
+                <div>
+                    <h1 class="text-center" style="color: black;">
+                        <mat-icon style="color:#28a745">add_circle</mat-icon> <strong> CREATE HOSPITAL</strong>
+                    </h1>
+                </div>
+                <p class="text-center" *ngIf="formEmpty" style="color: red; margin-top: 5px;">Please Fill Out All Mandatory Fields</p>
+                <form class="text-center" (ngSubmit)="onSubmit()" ngNativeValidate>
+                    <table class="table table-borderless table-condensed">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <mat-form-field appearance="outline">
+                                        <mat-label style="color: black;">Hospital Name</mat-label>
+                                        <input [(ngModel)]="hospital.hospitalName" required name="hospitalName" type="text" matInput
+                                            placeholder="Enter Hospital Name" autocomplete="off">
+                                        <mat-icon matSuffix>create</mat-icon>
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field appearance="outline">
+                                        <mat-label style="color: black;">Appointments Per Day</mat-label>
+                                        <input [(ngModel)]="hospital.appointmentsPerDay" required name="appointmentsPerDay" type="number" matInput
+                                            placeholder="Enter Appointments Per Day" autocomplete="off">
+                                        <mat-icon matSuffix>create</mat-icon>
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field appearance="outline">
+                                        <mat-label style="color: black;">Contact Number</mat-label>
+                                        <input [(ngModel)]="hospital.contactNumber" required name="contactNumber" type="tel" pattern="[0-9]{9}" matInput
+                                            placeholder="Enter Contact Number" autocomplete="off" title="Phone Number Should Be 10 Digits">
+                                        <mat-icon matSuffix>create</mat-icon>
+                                    </mat-form-field>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <mat-form-field appearance="outline">
+                                        <mat-label style="color: black;">Email Id</mat-label>
+                                        <input [(ngModel)]="hospital.emailId" name="emailId" type="email" matInput placeholder="Enter Email Id"
+                                            autocomplete="off">
+                                        <mat-icon matSuffix>create</mat-icon>
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field appearance="outline">
+                                        <mat-label style="color: black;">Street Line 1</mat-label>
+                                        <input [(ngModel)]="hospitalAddress.streetLine1" required name="streetLine1" type="text" matInput
+                                            placeholder="Enter Street Line 1" autocomplete="off">
+                                        <mat-icon matSuffix>create</mat-icon>
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field appearance="outline">
+                                        <mat-label style="color: black;">Street Line 2</mat-label>
+                                        <input [(ngModel)]="hospitalAddress.streetLine2" name="streetLine2" type="text" matInput placeholder="Enter Street Line 2"
+                                            autocomplete="off">
+                                        <mat-icon matSuffix>create</mat-icon>
+                                    </mat-form-field>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <mat-form-field appearance="outline">
+                                        <mat-label style="color: black;">Location</mat-label>
+                                        <input [(ngModel)]="hospitalAddress.location" required name="location" type="text" matInput
+                                            placeholder="Enter Location" autocomplete="off">
+                                        <mat-icon matSuffix>create</mat-icon>
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field appearance="outline">
+                                        <mat-label style="color: black;">Pincode</mat-label>
+                                        <input [(ngModel)]="hospitalAddress.pincode" required name="pincode" type="tel" pattern="[0-9]{6}" matInput
+                                            placeholder="Enter Pincode" autocomplete="off" title="Pincode Should Be 6 Digits">
+                                        <mat-icon matSuffix>create</mat-icon>
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field appearance="outline">
+                                        <mat-label style="color: black;">State</mat-label>
+                                        <input [(ngModel)]="hospitalAddress.state" required name="state" type="text" matInput placeholder="Enter State"
+                                            autocomplete="off">
+                                        <mat-icon matSuffix>create</mat-icon>
+                                    </mat-form-field>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <mat-form-field appearance="outline">
+                                        <mat-label style="color: black;">Country</mat-label>
+                                        <input [(ngModel)]="hospitalAddress.country" required name="country" type="text" matInput placeholder="Enter Country"
+                                            autocomplete="off">
+                                        <mat-icon matSuffix>create</mat-icon>
+                                    </mat-form-field>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="container">
+                        <button type="submit" mat-raised-button style="background-color: #28a745; color: white">CREATE <mat-icon>add_box</mat-icon></button>
+                        <button type="reset" style="margin-left: 10px;" mat-raised-button color="accent">RESET <mat-icon>autorenew</mat-icon></button>
+                    </div>
+
+                </form>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>

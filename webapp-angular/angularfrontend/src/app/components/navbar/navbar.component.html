@@ -1,0 +1,10 @@
+<mat-toolbar style="background-color: #191919;">
+    <span><a mat-icon-button style="font-size: 20px; color: aliceblue;">HEALTHQ</a></span>
+    <span class="example-spacer"></span>
+    <button *ngIf="!loggedIn" mat-raised-button routerLink="/home" color="primary">HOME <mat-icon>home</mat-icon></button>
+    &nbsp;&nbsp;&nbsp;
+    <button *ngIf="!loggedIn" mat-raised-button routerLink="/login" style="color: white; background-color: rgba(30, 228, 66, 0.703);">ADMIN LOGIN <mat-icon>https</mat-icon></button>
+    <button *ngIf="loggedIn" mat-raised-button routerLink="/dashboard" color="primary">DASHBOARD <mat-icon>dashboard</mat-icon></button>
+    &nbsp;&nbsp;&nbsp;
+    <button *ngIf="loggedIn" (click)="logoutUser()" mat-raised-button color="accent">LOGOUT <mat-icon>exit_to_app</mat-icon></button>
+</mat-toolbar>

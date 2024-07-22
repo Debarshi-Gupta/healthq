@@ -1,0 +1,82 @@
+<div class="bootstrap-wrapper">
+    <div class="container mt" style="background-color: white;">
+        <div class="row">
+            <div>
+                <br>
+                <div>
+                    <h1 class="text-center" style="color: black;">
+                        <mat-icon color="primary">update</mat-icon> <strong> UPDATE TEST</strong>
+                    </h1>
+                </div>
+                <p class="text-center" *ngIf="formEmpty" style="color: red; margin-top: 5px;">Please Fill Out All Mandatory Fields</p>
+                <form class="text-center" (ngSubmit)="onSubmit()" ngNativeValidate>
+                    <table class="table table-borderless table-condensed">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <mat-form-field appearance="outline">
+                                        <mat-label style="color: black;">Test Name</mat-label>
+                                        <input [(ngModel)]="testDetails.testName" required name="testName" type="text" matInput
+                                            placeholder="Enter Test Name" autocomplete="off">
+                                        <mat-icon matSuffix>create</mat-icon>
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field appearance="outline">
+                                        <mat-label style="color: black;">Description</mat-label>
+                                        <input [(ngModel)]="testDetails.description" required name="description" type="text" matInput
+                                            placeholder="Enter Description" autocomplete="off">
+                                        <mat-icon matSuffix>create</mat-icon>
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field appearance="outline">
+                                        <mat-label style="color: black;">Unit</mat-label>
+                                        <input [(ngModel)]="testDetails.unit" required name="unit" type="text" matInput
+                                            placeholder="Enter Unit" autocomplete="off">
+                                        <mat-icon matSuffix>create</mat-icon>
+                                    </mat-form-field>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <mat-form-field appearance="outline">
+                                        <mat-label style="color: black;">Range</mat-label>
+                                        <input [(ngModel)]="testDetails.range" name="range" type="text" matInput placeholder="Enter Range"
+                                            autocomplete="off">
+                                        <mat-icon matSuffix>create</mat-icon>
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field appearance="outline">
+                                        <mat-label style="color: black;">Price</mat-label>
+                                        <input [(ngModel)]="testDetails.price" required name="price" type="number" matInput
+                                            placeholder="Enter Price" autocomplete="off">
+                                        <mat-icon matSuffix>create</mat-icon>
+                                    </mat-form-field>
+                                </td>
+                                <td>
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <br><br><br><br><br><br>
+
+                    <div class="container">
+                        <button type="submit" mat-raised-button color="primary">UPDATE <mat-icon>update</mat-icon></button>
+                        <button type="reset" style="margin-left: 10px;" mat-raised-button color="accent">RESET <mat-icon>autorenew</mat-icon></button>
+                    </div>
+
+                </form>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+
+

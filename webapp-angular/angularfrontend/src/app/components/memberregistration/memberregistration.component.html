@@ -1,0 +1,145 @@
+<div class="bootstrap-wrapper">
+    <div class="container mt" style="background-color: white;">
+        <div class="row">
+            <div>
+                <br>
+                <div>
+                    <h1 class="text-center" style="color: black;">
+                        <strong><mat-icon color="primary">account_circle</mat-icon> MEMBER REGISTRATION</strong>
+                    </h1>
+                </div>
+                <p class="text-center" *ngIf="sameContactNumber" style="color: red; margin-top: 5px;">Member With Specified Contact Number Already Exists.</p>
+                <p class="text-center" *ngIf="slotBooked" style="color: red; margin-top: 5px;">We Regret To Inform You That The Slot Is Already Booked. Please Choose A Different Appointment Date/Time.</p>
+                <form class="text-center" (ngSubmit)="onSubmit()" ngNativeValidate>
+                    <table class="table table-borderless table-condensed">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <mat-form-field appearance="outline">
+                                        <mat-label style="color: black;">Member Name</mat-label>
+                                        <input [(ngModel)]="name" required name="memberName" type="text" matInput
+                                            placeholder="Enter Member Name" autocomplete="off">
+                                        <mat-icon matSuffix>create</mat-icon>
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field appearance="outline">
+                                        <mat-label style="color: black;">Member Address</mat-label>
+                                        <input [(ngModel)]="address" required name="memberAddress" type="text" matInput
+                                            placeholder="Enter Member Address" autocomplete="off">
+                                        <mat-icon matSuffix>create</mat-icon>
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field appearance="outline">
+                                        <mat-label style="color: black;">Gender</mat-label>
+                                        <mat-select required name="memberGender" matInput [(ngModel)]="gender">
+                                            <mat-option value="Male">Male</mat-option>
+                                            <mat-option value="Female">Female</mat-option>
+                                            <mat-option value="Transgender">Transgender</mat-option>
+                                            <mat-option value="Others">Others</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <mat-form-field appearance="outline">
+                                        <mat-label style="color: black;">Date Of Birth</mat-label>
+                                        <input name="memberDob" [(ngModel)]="dob" matInput [matDatepicker]="picker1" [max]="currentDate">
+                                        <mat-datepicker-toggle matSuffix [for]="picker1">
+                                        </mat-datepicker-toggle>
+                                        <mat-datepicker #picker1></mat-datepicker>
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field appearance="outline">
+                                        <mat-label style="color: black;">Member Contact Number</mat-label>
+                                        <input [(ngModel)]="contactNumber" required name="memberContactNumber" type="tel" pattern="[0-9]{9}" matInput
+                                            placeholder="Enter Member Contact Number" autocomplete="off" title="Phone Number Should Be 10 Digits">
+                                        <mat-icon matSuffix>create</mat-icon>
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field appearance="outline">
+                                        <mat-label style="color: black;">Member Email Id</mat-label>
+                                        <input [(ngModel)]="emailId" required name="memberEmailId" type="email" matInput
+                                            placeholder="Enter Member Email Id" autocomplete="off">
+                                        <mat-icon matSuffix>create</mat-icon>
+                                    </mat-form-field>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <mat-form-field appearance="outline">
+                                        <mat-label style="color: black;">Member Plan</mat-label>
+                                        <mat-select required matInput name="memberPlan">
+                                            <mat-option *ngFor="let list of allPlansList; let i = index" (click)="setPlanDetails(list)" value="list.plan.planName">{{list.plan.planName}}</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field appearance="outline">
+                                        <mat-label style="color: black;">Member Plan Cost</mat-label>
+                                        <input [(ngModel)]="planCost" required name="memberPlanCost" type="number" matInput
+                                            placeholder="Enter Member Plan Cost" autocomplete="off" disabled>
+                                        <mat-icon matSuffix>create</mat-icon>
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field appearance="outline">
+                                        <mat-label style="color: black;">Appointment Date</mat-label>
+                                        <input name="memberAppointmentDate" [(ngModel)]="appointmentDate" matInput [matDatepicker]="picker2" [min]="currentDate">
+                                        <mat-datepicker-toggle matSuffix [for]="picker2">
+                                        </mat-datepicker-toggle>
+                                        <mat-datepicker #picker2></mat-datepicker>
+                                    </mat-form-field>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <mat-form-field appearance="outline">
+                                        <mat-label style="color: black;">Appointment Slot</mat-label>
+                                        <mat-select required matInput name="appointmentSlot" [(ngModel)]="appointmentDateHour">
+                                            <mat-option value="9">9AM - 10AM</mat-option>
+                                            <mat-option value="10">10AM - 11AM</mat-option>
+                                            <mat-option value="11">11AM - 12PM</mat-option>
+                                            <mat-option value="12">12PM - 1PM</mat-option>
+                                            <mat-option value="13">1PM - 2PM</mat-option>
+                                            <mat-option value="14">2PM - 3PM</mat-option>
+                                            <mat-option value="15">3PM - 4PM</mat-option>
+                                            <mat-option value="16">4PM - 5PM</mat-option>
+                                            <mat-option value="17">5PM - 6PM</mat-option>
+                                            <mat-option value="18">6PM - 7PM</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field appearance="outline">
+                                        <mat-label style="color: black;">Hospital</mat-label>
+                                        <mat-select required matInput name="hospital">
+                                            <mat-option *ngFor="let list of allHospitalMapList; let i = index" (click)="setHospitalDetails(list)" value="list.hospital.hospitalName">{{list.hospital.hospitalName}}</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="container">
+                        <button type="submit" mat-raised-button color="primary">REGISTER
+                            <mat-icon>add_box</mat-icon></button>
+                        <button type="reset" style="margin-left: 10px;" mat-raised-button color="accent">RESET
+                            <mat-icon>autorenew</mat-icon></button>
+                    </div>
+
+                </form>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+
