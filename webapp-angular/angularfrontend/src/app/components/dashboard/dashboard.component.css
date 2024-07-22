@@ -1,0 +1,17 @@
+.card
+{
+    color:black;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    margin-top: 55px;
+    height: 370px;
+}
+
+.card:hover 
+{
+    transform: scale(1.1);
+}
+
+a 
+{
+    text-decoration: none;
+}

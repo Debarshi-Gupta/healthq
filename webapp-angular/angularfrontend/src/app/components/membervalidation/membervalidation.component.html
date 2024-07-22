@@ -1,0 +1,41 @@
+<div class="bootstrap-wrapper">
+    <div class="container mt" style="background-color: white; width: 40%; border-radius: 10px;">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="container text-center">
+                    <img class="img-fluid mt" style="width: 150px;" src="/assets/421648.png" alt="">
+                </div>
+                <br>
+                <h1 class="text-center" style="color: black;"><strong>MEMBER DETAILS</strong></h1>
+
+                <p class="text-center" *ngIf="invalidCredentials" style="color: red; margin-top: 5px;">Invalid Member Name/Contact Number</p>
+
+                <form class="text-center" (ngSubmit)="onSubmit()">
+                    <mat-form-field appearance="outline">
+                        <mat-label style="color: black;">Member Name</mat-label>
+                        <input [(ngModel)]="memberDTO.name" required name="memberName" type="text" matInput placeholder="Enter Your Name" autocomplete="off">
+                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                    </mat-form-field>
+
+                    <br>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label style="color: black;">Member Contact Number</mat-label>
+                        <input [(ngModel)]="memberDTO.contactNumber" required name="memberContactNumber" type="number" matInput placeholder="Enter Your Contact Number">
+                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                    </mat-form-field>
+
+                    <br>
+
+                    <div class="container">
+                        <button type="submit" mat-raised-button color="primary">PROCEED</button>
+                        <button type="reset" style="margin-left: 10px;" mat-raised-button color="accent">RESET</button>
+                    </div>
+
+                </form>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
+

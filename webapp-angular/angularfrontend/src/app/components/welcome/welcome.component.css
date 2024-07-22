@@ -1,0 +1,44 @@
+/* #slider .carousel-item {
+    height: 500px;
+  }
+  
+  .carousel-caption {
+    font-size: 18px;
+  }
+  
+  .carousel-item>img {
+    width: 100%
+  } */
+
+  h1 
+  {
+    font-size: 35px;
+  }
+
+  ngb-carousel .wrapper {
+    position: relative;
+    height: 400px;
+    padding-top: 55%; /* Keep ratio for 900x500 images */
+  }
+  
+  ngb-carousel .wrapper>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  .carousel-caption
+  {
+    top: 40px;
+  }
+
+  h2 
+  {
+    opacity: 0.7;
+  }
+
+  
+
+  

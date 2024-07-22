@@ -1,0 +1,42 @@
+<div class="container mt mb">
+    
+    <button (click)="getCreateTest()" mat-raised-button style="background-color: #28a745; color:white">CREATE <mat-icon>library_add</mat-icon></button>
+    <br><br>
+    <div class="row" *ngFor="let list of testList; let i = index">
+        <mat-accordion>
+            <mat-expansion-panel [expanded]="true">
+                <mat-expansion-panel-header>
+                    <mat-panel-title class="text-center">
+                        <mat-icon color="primary">assignment</mat-icon> &nbsp;<strong>{{list.testName}}</strong>
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click Here To Toggle Details
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <table class="table table-borderless table-condensed">
+                    <tbody>
+                    <tr>
+                        <td colspan="3">DESCRIPTION: &nbsp;{{list.description}}</td>
+                    </tr>
+                    <tr>
+                        <td>UNIT: &nbsp;{{list.unit}}</td>
+                        <td>RANGE: &nbsp;{{list.range}}</td>
+                        <td>PRICE: &nbsp;{{list.price}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <mat-action-row>
+                    <button (click)="getUpdateTest(list)" mat-raised-button color="primary">UPDATE <mat-icon>update</mat-icon></button>
+                    <button (click)="deleteTest(list)" mat-raised-button color="accent">DELETE <mat-icon>delete</mat-icon></button>
+                </mat-action-row>
+
+            </mat-expansion-panel>
+
+        </mat-accordion>
+
+    </div>
+</div>
+<br>
+<br>
+<br>
+

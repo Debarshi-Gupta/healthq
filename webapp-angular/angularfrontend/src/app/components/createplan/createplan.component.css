@@ -1,0 +1,10 @@
+.table-borderless td, .table-borderless th 
+{
+    border: 0;
+}
+
+
+td 
+{
+    font-family: sans-serif;
+}

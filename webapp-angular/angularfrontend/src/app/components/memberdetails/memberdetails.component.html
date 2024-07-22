@@ -1,0 +1,96 @@
+<div class="bootstrap-wrapper">
+    <div class="container mt" style="background-color: white;">
+        <div class="row">
+            <div>
+                <br>
+                <div>
+                    <h1 class="text-center" style="color: black;">
+                        <mat-icon color="primary">account_circle</mat-icon> <strong> MEMBER DETAILS</strong>
+                    </h1>
+                </div>
+                <br><br>
+                <table class="table table-borderless table-condensed">
+                    <tbody>
+                        <tr>
+                            <td>
+                                Name:
+                                <br>
+                                {{memberDetails.name}}
+                            </td>
+                            <td>
+                                Address:
+                                <br>
+                                {{memberDetails.address}}
+                            </td>
+                            <td>
+                                Gender:
+                                <br>
+                                {{memberDetails.gender}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Date Of Birth:
+                                <br>
+                                {{memberDetails.dobDay}}/{{memberDetails.dobMonth}}/{{memberDetails.dobYear}}
+                            </td>
+                            <td>
+                                Contact Number:
+                                <br>
+                                {{memberDetails.contactNumber}}
+                            </td>
+                            <td>
+                                Email Id:
+                                <br>
+                                {{memberDetails.emailId}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Plan Name:
+                                <br>
+                                {{planName}}
+                            </td>
+                            <td>
+                                Plan Cost:
+                                <br>
+                                {{memberDetails.planCost}}
+                            </td>
+                            <td>
+                                Appointment Date:
+                                <br>
+                                {{memberDetails.appointmentDateDay}}/{{memberDetails.appointmentDateMonth}}/{{memberDetails.appointmentDateYear}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Appointment Slot:
+                                <br>
+                                {{appointmentSlot}}:00 - {{appointmentSlot2}}:00
+                            </td>
+                            <td>
+                                Hospital Name:
+                                <br>
+                                {{hospitalName}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <br><br>
+
+                <div class="container text-center">
+                    <button (click)="getMemberDetailsUpdate()" mat-raised-button color="primary">UPDATE
+                        <mat-icon>update</mat-icon>
+                    </button>
+                </div>
+
+
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
